@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Eternal Love Story 💍🌸❤️</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.polaroid-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.polaroid-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.polaroid-frame {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    height: 180px; 
+    background: #f8f8f8;
+}
+
+.polaroid-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.polaroid-caption {
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.polaroid-caption h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #e91e63;
+}
+
+.polaroid-caption p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+.love-icon {
+    color: #ff6b9d;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* ===== FLOWER ANIMATIONS ===== */
+.flower-float {
+    position: fixed;
+    font-size: 20px;
+    pointer-events: none;
+    z-index: 999;
+    animation: flowerFloat 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes flowerFloat {
+    0% {
+        transform: translateY(100vh) rotate(0deg) scale(0.8);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-20vh) rotate(720deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.flower-glow {
+    text-shadow: 0 0 10px rgba(255, 182, 193, 0.8);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px rgba(255, 182, 193, 0.8); }
+    to { text-shadow: 0 0 20px rgba(255, 182, 193, 1), 0 0 30px rgba(255, 105, 180, 0.6); }
+}
+
+/* [SELESAI CSS TAMBAHAN - SEMUA CSS LAINNYA TETAP SAMA] */
+.lightbox-content img {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .polaroid-frame {
+        height: 150px;
+    }
+    .polaroid-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .polaroid-frame {
+        height: 130px;
+    }
+}
+
+.clickable {
+    cursor: pointer !important;
+}
+.clickable:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(255,107,157,0.4) !important;
+}
+
+.music-btn, .start-btn, .action-btn {
+    cursor: pointer;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover, .start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255,107,157,0.5);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.love-heart {
+    position: fixed;
+    top: -20px;
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.main-content {
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+.typing-text {
+    font-size: 24px;
+    margin: 20px 0;
+    font-family: 'Dancing Script', cursive;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 28px;
+    margin: 40px 0 20px;
+    color: #e91e63;
+    font-family: 'Dancing Script', cursive;
+}
+
+.gallery-actions {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.action-btn {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #ff9a9e, #fecfef);
+    color: #c44569;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.love-message {
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+#timer {
+    font-size: 24px;
+    color: #e91e63;
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+#bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(255,105,180,0.2)
+    );
+    z-index: -1;
+}
+
+.hero-content {
+    animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.soulmate-glow {
+    color: #ff8fab;
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+}
+
+.music-btn, .start-btn {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 105, 180, 0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 0 20px rgba(255,105,180,0.3);
+}
+
+.music-btn:hover, .start-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+.polaroid-card {
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.polaroid-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 50px rgba(255,105,180,0.4);
+}
+
+.polaroid-card:nth-child(odd) {
+    animation: float 4s ease-in-out infinite;
+}
+.polaroid-card:nth-child(even) {
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.polaroid-frame img:hover {
+    transform: scale(1.1);
+}
+
+.gallery-title {
+    font-size: 32px;
+    text-shadow: 0 0 10px rgba(255,105,180,0.5);
+}
+
+.love-message {
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.lightbox {
+    backdrop-filter: blur(10px);
+}
+
+.lightbox-content {
+    animation: zoomIn 0.5s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.love-heart {
+    filter: drop-shadow(0 0 10px pink);
+}
+
+#timer {
+    font-size: 26px;
+    text-shadow: 0 0 10px rgba(255,105,180,0.7);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(255,182,193,0.3), transparent),
+                radial-gradient(circle at bottom, rgba(255,105,180,0.2), transparent),
+                rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+.particle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: pink;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh) scale(0.5);
+    }
+    to {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+.polaroid-card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.start-btn {
+    background: linear-gradient(45deg, #ff6b9d, #ff1493);
+    box-shadow: 0 0 15px #ff6b9d, 0 0 30px #ff1493;
+}
+
+.start-btn:hover {
+    box-shadow: 0 0 25px #ff6b9d, 0 0 50px #ff1493;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.love-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(255,255,255,0.95);
+    padding: 25px 40px;
+    border-radius: 20px;
+    text-align: center;
+    z-index: 99999;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    transition: 0.4s ease;
+}
+
+.love-popup.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.love-popup h3 {
+    color: #ff1493;
+    margin-bottom: 10px;
+}
+
+.hero {
+    background-attachment: fixed;
+}
+
+body {
+    cursor: none;
+}
+
+.cursor-love {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ff6b9d, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+}
+
+.star {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+.hero-title {
+    background: linear-gradient(45deg, #ff6b9d, #ffc0cb, #ff1493);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+}
+}
+
+.polaroid-card {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.polaroid-card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: 0.5s;
+}
+
+.polaroid-card:hover::before {
+    top: 0;
+    left: 0;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.love-popup {
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    text-shadow: 0 0 10px pink;
+}
+
+.action-btn:active {
+    transform: scale(0.9);
+}
+
+#cursor {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, #ff6b9d, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+}
+
+.star {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+.polaroid-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transform-style: preserve-3d;
+}
+
+.polaroid-card:hover {
+    transform: rotateY(8deg) scale(1.05);
+}
+
+.polaroid-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.3);
+    transform: skewX(-20deg);
+}
+
+.polaroid-card:hover::after {
+    left: 150%;
+    transition: 0.7s;
+}
+
+.start-btn {
+    box-shadow: 0 0 20px #ff6b9d, 0 0 40px #ff1493;
+}
+
+.love-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    z-index: 9999;
+    transition: 0.4s;
+}
+
+.love-popup.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ending {
+    display: none;
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+    font-size: 30px;
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+#intro{
+  position:fixed; inset:0;
+  background:radial-gradient(circle at 50% 20%, rgba(255,105,180,.25), rgba(0,0,0,.9));
+  display:flex; align-items:center; justify-content:center;
+  z-index:99999; color:#fff;
+  transition:opacity .8s ease, visibility .8s;
+}
+#intro.hide{ opacity:0; visibility:hidden; }
+.intro-inner{ text-align:center; }
+.progress{
+  width:260px; height:6px; background:rgba(255,255,255,.2);
+  border-radius:10px; overflow:hidden; margin:15px auto;
+}
+#bar{
+  height:100%; width:0%;
+  background:linear-gradient(90deg,#ff6b9d,#ff1493);
+  box-shadow:0 0 15px #ff6b9d;
+  transition:width .2s;
+}
+
+.parallax{
+  transform: translateY(var(--y,0));
+  transition: transform .1s linear;
+}
+
+.card{
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+.card .inner{
+  transform: translateZ(20px);
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important; }
+}
+
+.lightbox-hint{
+  position:absolute; bottom:10px; left:50%;
+  transform:translateX(-50%);
+  color:#fff; opacity:.7; font-size:12px;
+}
+</style>
+</head>
+
+<body>
+    
+<div id="intro">
+  <div class="intro-inner">
+    <h1>🌸 my love for you and epep 💖🌸</h1>
+    <div class="progress">
+      <div id="bar"></div>
+    </div>
+    <p id="loadingText">Preparing our memories in Bermuda 🌺</p>
+  </div>
+</div>
+
+    <div class="cursor-love" id="cursorLove"></div>
+    <div class="love-popup" id="lovePopup">
+    <h3>💌🌸 Love Note 🌸💌</h3>
+    <p id="popupText"></p>
+</div>
+
+<video autoplay muted loop id="bgVideo">
+    <source src="snaptik_7416765724749778206_v3.mp4" type="video/mp4">
+</video>
+
+<button class="music-btn diamond-pulse clickable" onclick="toggleMusic()" id="musicBtn">
+    <i class="fas fa-music"></i>
+    <span>🌹 Play Love Song 💕🌹</span>
+</button>
+
+<audio id="music" loop>
+    <source src="when yah.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+    <div class="hero-content">
+        <p style="font-size:18px; opacity:0.8;">
+    Every moment with you is magic ✨🌸
+</p>
+        <h1 id="title" class="hero-title">To My<span class="soulmate-glow">Soulmate</span> 💝🌺</h1>
+        <p id="typing" class="typing-text"></p>
+        <button class="start-btn diamond-glow pulse clickable" onclick="startLove()">
+            <i class="fas fa-heart"></i>  🌸 Enter Our Love World 🌸 💝🌺
+        </button>
+    </div>
+</section>
+
+<section class="main-content" id="mainContent" style="display: none;">
+
+    <div class="countdown">
+        <h2><i class="fas fa-infinity"></i> 🌸 Our Love Timer 🌸</h2>
+        <p id="timer">Loading our love... 🌹</p>
+    </div>
+
+    <div class="gallery-container">
+        <h2 class="gallery-title flower-glow">🌺 Our Love Memories 💖🌺</h2>
+        
+        <div class="polaroid-grid">
+            <div class="polaroid-card clickable" data-img="../iamge/freya.jpg" onclick="openLightbox(this)">
+                <div class="polaroid-frame">
+                    <img src="../image/freya.jpg" alt="Love Memory 1">
+                </div>
+                <div class="polaroid-caption">
+                    <i class="fas fa-heart love-icon"></i> 🌸
+                    <h4>Our Beginning 🌹</h4>
+                    <p>"Love at first sight" 💕🌺</p>
+                </div>
+            </div>
+
+            <div class="polaroid-card clickable" data-img="../image/oline.jpg" onclick="openLightbox(this)">
+                <div class="polaroid-frame">
+                    <img src="../image/oline.jpg" alt="Love Memory 2">
+                </div>
+                <div class="polaroid-caption">
+                    <i class="fas fa-kiss-wink-heart love-icon"></i> 🌺
+                    <h4>Sweet Moments 🌸</h4>
+                    <p>"Your smile melts me" 💋🌹</p>
+                </div>
+            </div>
+
+            <div class="polaroid-card featured clickable" data-img="../image/christy.jpg" onclick="openLightbox(this)">
+                <div class="polaroid-frame">
+                    <img src="../image/christy.jpg" alt="Love Memory 3">
+                </div>
+                <div class="polaroid-caption">
+                    <i class="fas fa-heart-broken love-icon"></i> 🌹
+                    <h4>Hearts United 🌺</h4>
+                    <p>"You complete me" 💝🌸</p>
+                </div>
+            </div>
+
+            <div class="polaroid-card clickable" data-img="../image/ada wong1.jpg" onclick="openLightbox(this)">
+                <div class="polaroid-frame">
+                    <img src="../image/ada wong1.jpg" alt="Love Memory 4">
+                </div>
+                <div class="polaroid-caption">
+                    <i class="fas fa-map-marker-alt love-icon"></i> 🌸
+                    <h4>Our Adventures 🌺</h4>
+                    <p>"Together forever" 🌍🌹</p>
+                </div>
+            </div>
+
+            <div class="polaroid-card clickable tilted" data-img="../image/.jpg" onclick="openLightbox(this)">
+                <div class="polaroid-frame">
+                    <img src="../image/miu.jpg" alt="Love Memory 5">
+                </div>
+                <div class="polaroid-caption">
+                    <i class="fas fa-infinity love-icon"></i> 🌹
+                    <h4>Forever Love 🌸</h4>
+                    <p>"Eternal promise" ∞🌺</p>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <div class="gallery-actions">
+            <button class="action-btn love-shower clickable" onclick="loveShower()">
+                💕🌸 Love Shower 🌸💕
+            </button>
+            <button class="action-btn clickable" onclick="randomLoveMessage()">
+                💌🌺 Love Note 🌺💌
+            </button>
+        </div>
+    </div>
+
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+        <span class="lightbox-close clickable" onclick="closeLightbox()">🌸×</span>
+        <img id="lightbox-img" src="" alt="Our Love Memory">
+        <div class="lightbox-caption">
+            <i class="fas fa-heart"></i> 🌹
+            <p id="lightbox-text">Click navigation or outside to close 💕🌺</p>
+        </div>
+        <div class="lightbox-nav">
+            <button class="nav-prev clickable" onclick="prevImage()">🌸&#10094;</button>
+            <button class="nav-next clickable" onclick="nextImage()">&#10095;🌺</button>
+        </div>
+    </div>
+</div>
+
+<!-- JAVASCRIPT DENGAN FLOWER EFFECTS -->
+<script>
+let currentImageIndex = 0;
+const images = ['freya.jpg', 'oline.jpg', 'christy.jpg', 'ada wong1.jpg', 'miu.jpg', ''];
+
+const loveMessages = [
+    "You make my heart skip 💓🌸",
+    "Forever isn't enough 💍🌺",
+    "You are my sunshine ☀️🌹",
+    "I love you 3000 💕🌸",
+    "My soulmate forever 💖🌺"
+];
+
+/* ===== MUSIC (FADE SMOOTH) ===== */
+function toggleMusic() {
+    const music = document.getElementById('music');
+    const btn = document.getElementById('musicBtn');
+
+    if (music.paused) {
+        music.volume = 0;
+        music.play();
+
+        let fade = setInterval(() => {
+            if (music.volume < 1) {
+                music.volume += 0.05;
+            } else {
+                clearInterval(fade);
+            }
+        }, 200);
+
+        btn.innerHTML = '<i class="fas fa-pause"></i> 🌹 Playing 💕🌹';
+    } else {
+        music.pause();
+        btn.innerHTML = '<i class="fas fa-music"></i> 🌸 Play 💕🌸';
+    }
+}
+
+/* ===== START ===== */
+function startLove() {
+    document.querySelector('.hero').style.opacity = '0';
+
+    setTimeout(() => {
+        document.querySelector('.hero').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+    }, 600);
+
+    startTimer();
+    startFlowerRain(); // TAMBAHAN: MULAI HUJAN BUNGA
+}
+
+/* ===== TIMER ===== */
+function startTimer() {
+    let seconds = 0;
+    setInterval(() => {
+        seconds++;
+        document.getElementById('timer').innerHTML =
+            `🌸💕 ${Math.floor(seconds/86400)}d ${Math.floor((seconds%86400)/3600)}h ${Math.floor((seconds%3600)/60)}m ${seconds%60}s 🌹`;
+    }, 1000);
+}
+
+/* ===== TAMBAHAN: FLOWER RAIN ===== */
+function startFlowerRain() {
+    setInterval(() => {
+        const flowers = ['🌸','🌺','🌹','🌷','🌻','🌼','💐'];
+        const flower = document.createElement('div');
+        flower.className = 'flower-float';
+        flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        document.body.appendChild(flower);
+        
+        setTimeout(() => flower.remove(), 7000);
+    }, 800);
+}
+
+/* ===== LIGHTBOX ===== */
+function openLightbox(el) {
+    document.getElementById('lightbox-img').src = el.dataset.img;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    document.getElementById('lightbox-img').src = images[currentImageIndex];
+}
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    document.getElementById('lightbox-img').src = images[currentImageIndex];
+}
+
+/* ===== LOVE POPUP ===== */
+function randomLoveMessage() {
+    const msg = loveMessages[Math.floor(Math.random() * loveMessages.length)];
+    const popup = document.getElementById('lovePopup');
+
+    document.getElementById('popupText').innerText = msg;
+    popup.classList.add('show');
+
+    setTimeout(() => popup.classList.remove('show'), 2500);
+}
+
+/* ===== HEART + FLOWER RAIN ===== */
+function loveShower() {
+    for (let i = 0; i < 25; i++) {
+        setTimeout(() => {
+            const heart = document.createElement('div');
+            const items = ['💕','💖','💗','💓','🌸','🌺','🌹'];
+            heart.className = 'love-heart';
+            heart.innerHTML = items[Math.random()*items.length|0];
+            heart.style.left = Math.random() * 100 + 'vw';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }, i * 100);
+    }
+}
+
+/* ===== TYPE WRITER DENGAN BUNGA ===== */
+const phrases = ["You are my everything... 🌸", "Forever my love... 🌺", "Our love story 💕🌹"];
+let idx = 0;
+
+function typeWriter() {
+    let i = 0;
+    const el = document.getElementById('typing');
+    el.innerHTML = '';
+
+    function type() {
+        if (i < phrases[idx].length) {
+            el.innerHTML += phrases[idx][i++];
+            setTimeout(type, 100);
+        } else {
+            idx = (idx + 1) % phrases.length;
+            setTimeout(typeWriter, 2000);
+        }
+    }
+    type();
+}
+typeWriter();
+
+/* ===== CURSOR ===== */
+const cursor = document.getElementById('cursorLove');
+document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+/* ===== STARS ===== */
+function createStars() {
+    for (let i = 0; i < 60; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random()*100 + 'vw';
+        star.style.top = Math.random()*100 + 'vh';
+        document.body.appendChild(star);
+    }
+}
+createStars();
+
+/* ===== SCROLL ANIMATION ===== */
+const elements = document.querySelectorAll('.polaroid-card, .gallery-title, .countdown');
+
+function showOnScroll() {
+    elements.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+            el.classList.add('show');
+        }
+    });
+}
+elements.forEach(el => el.classList.add('fade-in'));
+window.addEventListener('scroll', showOnScroll);
+showOnScroll();
+
+/* ===== PARTICLES ===== */
+function createParticles() {
+    for (let i = 0; i < 20; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random()*100 + 'vw';
+        p.style.animationDuration = (Math.random()*5+5)+'s';
+        document.body.appendChild(p);
+    }
+}
+createParticles();
+
+/* ===== PRELOAD + INTRO PROGRESS ===== */
+const assets = [
+  'freya.jpg','christy.jpg','oline.jpg','ada wong1.jpg','miu.jpg'
+];
+let loaded = 0;
+const bar = document.getElementById('bar');
+const intro = document.getElementById('intro');
+
+assets.forEach(src=>{
+  const img = new Image();
+  img.src = src;
+  img.onload = img.onerror = () => {
+    loaded++;
+    const pct = Math.round((loaded / assets.length) * 100);
+    bar.style.width = pct + '%';
+    if(loaded === assets.length){
+      setTimeout(()=> intro.classList.add('hide'), 400);
+    }
+  };
+});
+
+/* ===== MUSIC: FADE + SAVE STATE ===== */
+const music = document.getElementById('music');
+const btn = document.getElementById('musicBtn');
+
+function playMusic(){
+  music.volume = 0;
+  music.play();
+  let f = setInterval(()=>{
+    if(music.volume < 1) music.volume += 0.05;
+    else clearInterval(f);
+  }, 120);
+  localStorage.setItem('music','on');
+  btn.innerHTML = '<i class="fas fa-pause"></i> 🌹 Playing 💕🌹';
+}
+function pauseMusic(){
+  music.pause();
+  localStorage.setItem('music','off');
+  btn.innerHTML = '<i class="fas fa-music"></i> 🌸 Play 💕🌸';
+}
+function toggleMusic(){
+  music.paused ? playMusic() : pauseMusic();
+}
+if(localStorage.getItem('music') === 'on'){
+}
+
+/* ===== START: AUTO MUSIC (setelah klik) ===== */
+const _startLove = startLove;
+startLove = function(){
+  _startLove();
+  if(localStorage.getItem('music') === 'on') playMusic();
+};
+
+/* ===== POPUP QUEUE ===== */
+let queue = [];
+let showing = false;
+function enqueueMsg(text){
+  queue.push(text);
+  if(!showing) showNext();
+}
+function showNext(){
+  if(queue.length === 0){ showing=false; return; }
+  showing = true;
+  const popup = document.getElementById('lovePopup');
+  document.getElementById('popupText').innerText = queue.shift();
+  popup.classList.add('show');
+  setTimeout(()=>{
+    popup.classList.remove('show');
+    setTimeout(showNext, 300);
+  }, 2200);
+}
+function randomLoveMessage(){
+  const msg = loveMessages[Math.floor(Math.random()*loveMessages.length)];
+  enqueueMsg(msg);
+}
+
+/* ===== CARD 3D TILT ===== */
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('mousemove', e=>{
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    const rx = -(y/r.height - .5) * 10;
+    const ry =  (x/r.width  - .5) * 10;
+    card.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) scale(1.03)`;
+  });
+  card.addEventListener('mouseleave', ()=>{
+    card.style.transform = '';
+  });
+});
+
+/* ===== PARALLAX ON SCROLL ===== */
+window.addEventListener('scroll', ()=>{
+  const y = window.scrollY;
+  document.querySelectorAll('.parallax').forEach(el=>{
+    el.style.setProperty('--y', (y * 0.05) + 'px');
+  });
+});
+
+/* ===== LIGHTBOX KEYBOARD NAV ===== */
+document.addEventListener('keydown', (e)=>{
+  const lb = document.getElementById('lightbox');
+  if(lb.style.display === 'flex'){
+    if(e.key === 'ArrowRight') nextImage();
+    if(e.key === 'ArrowLeft') prevImage();
+    if(e.key === 'Escape') closeLightbox();
+  }
+});
+
+const hint = document.createElement('div');
+hint.className = 'lightbox-hint';
+hint.innerText = '← → navigate • Esc close 🌸';
+document.querySelector('.lightbox-content')?.appendChild(hint);
+</script>
+
+</body>
+</html>

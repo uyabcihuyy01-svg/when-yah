@@ -1,0 +1,280 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+    overflow-x: hidden;
+    color: white;
+}
+
+/* VIDEO BG */
+#bgVideo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+    z-index: -1;
+}
+
+/* LOVE BACKGROUND */
+.bg-hearts::before {
+    content: "💖 💕 💘 💗 💓 💞";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    font-size: 30px;
+    opacity: 0.15;
+    animation: floatHearts 20s linear infinite;
+}
+
+@keyframes floatHearts {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 20px pink;
+}
+
+#typing {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* BUTTON */
+.start-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, pink, hotpink);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px pink;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px hotpink;
+}
+
+/* MUSIC BUTTON */
+.music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+/* HIDDEN SECTION */
+.hidden {
+    display: none;
+}
+
+/* COUNTDOWN */
+.countdown {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.countdown h2 {
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px pink;
+}
+
+#timer {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* ORBIT GALLERY */
+.container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.card {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px pink;
+    cursor: pointer;
+}
+
+/* POSISI ORBIT */
+.card:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, -50%); }
+.card:nth-child(2) { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+.card:nth-child(3) { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+.card:nth-child(4) { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+.card:nth-child(5) { top: 20%; left: 20%; }
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MESSAGE CARD */
+.message-card {
+    width: 80%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px pink;
+    text-align: center;
+}
+
+.message-card h3 {
+    margin-bottom: 10px;
+}
+
+#loveText {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.9);
+    z-index: 999;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+    box-shadow: 0 0 30px pink;
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .card {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.polaroid-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.polaroid-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transform: rotate(-2deg);
+  transition: all 0.4s ease;
+}
+
+.polaroid-frame {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.polaroid-frame img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.polaroid-caption {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+}
+
+.love-icon {
+  font-size: 24px;
+  color: #ff6b9d;
+  margin-bottom: 10px;
+}
+
+.polaroid-chapter { 
+  position: relative; 
+  animation: float 6s ease-in-out infinite;
+}
+
+.heart-glow { 
+  box-shadow: 0 0 50px #ff1493, 0 0 100px #ff69b4;
+  animation: heartBeat 1.5s infinite;
+}
+
+.grand-oath {
+  background: linear-gradient(135deg, rgba(255,107,157,0.9), rgba(255,105,180,0.9));
+  border-radius: 30px;
+  padding: 50px;
+}
